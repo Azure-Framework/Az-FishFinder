@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fish Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="finder-wrapper">
+    <div id="finder">
+        <div id="finder-header">
+            <span class="brand">HUMMNBIRD</span>
+            <button id="close-btn">×</button>
+        </div>
+        <div id="finder-body">
+            <div id="left-panel">
+                <canvas id="sonar-canvas" width="320" height="160"></canvas>
+            </div>
+            <div id="right-panel">
+                <div class="readout primary">
+                    <div class="label">DEPTH</div>
+                    <div class="value"><span id="depth-value">--.-</span><span class="unit">ft</span></div>
+                </div>
+                <div class="readout">
+                    <div class="label">SPEED</div>
+                    <div class="value"><span id="speed-value">--.-</span><span class="unit">mph</span></div>
+                </div>
+                <div class="status" id="status-text">No signal</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

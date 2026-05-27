@@ -9,16 +9,16 @@ body {
     background: transparent;
 }
 
-/* Wrapper is fixed and we drag this around */
+
 #finder-wrapper {
     position: fixed;
     top: 15%;
     left: 65%;
     z-index: 9999;
-    display: none; /* hidden until Lua says to show */
+    display: none; 
 }
 
-/* Fish finder "unit" frame */
+
 #finder {
     width: 520px;
     height: 260px;
@@ -31,7 +31,7 @@ body {
     overflow: hidden;
 }
 
-/* Optional background based on your provided image */
+
 #finder::before {
     content: "";
     position: absolute;
@@ -41,7 +41,7 @@ body {
     pointer-events: none;
 }
 
-/* Header bar */
+
 #finder-header {
     position: relative;
     z-index: 2;
@@ -52,7 +52,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 10px 0 18px;
-    cursor: move; /* drag handle */
+    cursor: move; 
 }
 
 #finder-header .brand {
@@ -74,7 +74,7 @@ body {
     text-align: center;
 }
 
-/* Main body */
+
 #finder-body {
     position: relative;
     z-index: 2;
@@ -83,7 +83,7 @@ body {
     padding: 10px;
 }
 
-/* Left sonar screen */
+
 #left-panel {
     flex: 2.8;
     background: #000;
@@ -99,7 +99,7 @@ body {
     display: block;
 }
 
-/* Right data readouts */
+
 #right-panel {
     flex: 1.2;
     display: flex;
@@ -157,7 +157,7 @@ body {
     background: rgba(0, 0, 0, 0.6);
 }
 
-/* Simple small-screen scaling */
+
 @media (max-width: 1200px) {
     #finder {
         transform: scale(0.8);

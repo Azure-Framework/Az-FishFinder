@@ -1,5 +1,5 @@
-local display   = false  -- UI visible
-local hasFocus  = false  -- NUI has mouse/keyboard focus
+local display   = false  
+local hasFocus  = false  
 
 local function setFishFinderVisible(state)
     display  = state
@@ -10,16 +10,15 @@ local function setFishFinderVisible(state)
         show = state
     })
 
-    SetNuiFocus(state, state) -- show + give focus or hide + remove focus
+    SetNuiFocus(state, state) 
 end
 
--- Command to toggle UI (show+focus / hide)
+
 RegisterCommand("fishfinder", function()
     setFishFinderVisible(not display)
 end, false)
 
 
--- X button: close everything
 RegisterNUICallback("close", function(data, cb)
     display  = false
     hasFocus = false
@@ -33,14 +32,14 @@ RegisterNUICallback("close", function(data, cb)
     cb("ok")
 end)
 
--- ESC from NUI: drop focus only, keep UI on screen
+
 RegisterNUICallback("escape", function(data, cb)
     hasFocus = false
-    SetNuiFocus(false, false)   -- THIS actually releases your mouse
+    SetNuiFocus(false, false)   
     cb("ok")
 end)
 
--- Helper: get boat depth below hull in feet
+
 local function getDepthInfo()
     local ped = PlayerPedId()
     if not IsPedInAnyVehicle(ped, false) then
@@ -52,7 +51,7 @@ local function getDepthInfo()
         return nil
     end
 
-    -- Only work on boats (class 14)
+    
     if GetVehicleClass(veh) ~= 14 then
         return nil
     end
@@ -64,14 +63,14 @@ local function getDepthInfo()
         return nil
     end
 
-    -- Raycast straight down from just above the water surface
+    
     local startZ = waterHeight + 5.0
     local endZ   = waterHeight - 200.0
 
     local rayHandle = StartShapeTestRay(
         coords.x, coords.y, startZ,
         coords.x, coords.y, endZ,
-        1, -- collide with world geometry
+        1, 
         veh,
         0
     )
@@ -109,7 +108,7 @@ local function getDepthInfo()
     }
 end
 
--- Main update loop for depth / speed
+
 CreateThread(function()
     while true do
         if display then

@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 name 'az-fishfinder'
-author 'Azure(TheStoicBear)'
+author 'MadebyAzure'
 description 'Small draggable fish finder sonar HUD for boats'
 version '1.0.0'
 
